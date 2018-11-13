@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPL_DrawingToolkit", "KPL_DrawingToolkit\KPL_DrawingToolkit.csproj", "{906E98DF-544B-4E98-8A46-19F042C510C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{906E98DF-544B-4E98-8A46-19F042C510C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{906E98DF-544B-4E98-8A46-19F042C510C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{906E98DF-544B-4E98-8A46-19F042C510C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{906E98DF-544B-4E98-8A46-19F042C510C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA83AAE7-483D-41CF-A494-DB16F360BB2E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+C:\Users\Firman Aqil\source\repos\KPL_DrawingToolkit\KPL_DrawingToolkit\bin\Debug\KPL_DrawingToolkit.exe.config
+C:\Users\Firman Aqil\source\repos\KPL_DrawingToolkit\KPL_DrawingToolkit\bin\Debug\KPL_DrawingToolkit.exe
+C:\Users\Firman Aqil\source\repos\KPL_DrawingToolkit\KPL_DrawingToolkit\bin\Debug\KPL_DrawingToolkit.pdb
+C:\Users\Firman Aqil\source\repos\KPL_DrawingToolkit\KPL_DrawingToolkit\obj\Debug\KPL_DrawingToolkit.csprojAssemblyReference.cache
+C:\Users\Firman Aqil\source\repos\KPL_DrawingToolkit\KPL_DrawingToolkit\obj\Debug\KPL_DrawingToolkit.Properties.Resources.resources
+C:\Users\Firman Aqil\source\repos\KPL_DrawingToolkit\KPL_DrawingToolkit\obj\Debug\KPL_DrawingToolkit.csproj.GenerateResource.cache
+C:\Users\Firman Aqil\source\repos\KPL_DrawingToolkit\KPL_DrawingToolkit\obj\Debug\KPL_DrawingToolkit.csproj.CoreCompileInputs.cache
+C:\Users\Firman Aqil\source\repos\KPL_DrawingToolkit\KPL_DrawingToolkit\obj\Debug\KPL_DrawingToolkit.exe
+C:\Users\Firman Aqil\source\repos\KPL_DrawingToolkit\KPL_DrawingToolkit\obj\Debug\KPL_DrawingToolkit.pdb
+C:\Users\Firman Aqil\source\repos\KPL_DrawingToolkit\KPL_DrawingToolkit\obj\Debug\KPL_DrawingToolkit.DrawingFrame.resources
