@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KPL_DrawingToolkit
 {
     public partial class DrawingFrame : Form
     {
+        private IToolbox toolbox;
+        private ICanvas canvas;
 
         private bool LineToolStatus;
         private bool CircleToolStatus;
@@ -22,7 +19,26 @@ namespace KPL_DrawingToolkit
         public DrawingFrame()
         {
             InitializeComponent();
+            InitForm();
         }
+
+        private void InitForm()
+        {
+            Debug.WriteLine("Loading UI . . .");
+
+            #region Toolbox
+
+            Debug.WriteLine("Loading Toolbox . . .");
+            this.toolbox = new Toolbox();
+
+
+
+            #endregion
+
+
+
+        }
+
 
         private void lineTool_Click(object sender, EventArgs e)
         {
@@ -55,10 +71,17 @@ namespace KPL_DrawingToolkit
 
         private void DrawCircle(int x, int y)
         {
-            Pen pen = new Pen(Color.Black, 1);
+
+            LinearGradientBrush linGrBrush = new LinearGradientBrush(
+                new Point(0, 10),
+                new Point(200, 10),
+                Color.FromArgb(255, 255, 0, 0),   // Opaque red
+                Color.FromArgb(255, 0, 0, 255));  // Opaque blue
+
+            Pen pen = new Pen(linGrBrush);
             Graphics circle;
             circle = drawingCanvas.CreateGraphics();
-            circle.DrawEllipse(pen, InitialPointX, InitialPointY, x - InitialPointX, y - InitialPointY);
+            circle.FillEllipse(linGrBrush, InitialPointX, InitialPointY, x - InitialPointX, y - InitialPointY);
 
             pen.Dispose();
             circle.Dispose();
@@ -80,6 +103,25 @@ namespace KPL_DrawingToolkit
 
         private void drawingCanvas_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void ToolGradient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GradientSelectColor1(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog1 = new ColorDialog();
+            colorDialog1.ShowDialog();
+
+        }
+
+        private void GradientSelectColor2(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog2 = new ColorDialog();
+            colorDialog2.ShowDialog();
 
         }
     }

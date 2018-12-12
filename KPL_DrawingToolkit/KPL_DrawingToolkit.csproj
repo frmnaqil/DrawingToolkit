@@ -52,8 +52,14 @@
     <Compile Include="DrawingFrame.Designer.cs">
       <DependentUpon>DrawingFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="ICanvas.cs" />
+    <Compile Include="ITool.cs" />
+    <Compile Include="IToolbox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toolbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="DrawingFrame.resx">
       <DependentUpon>DrawingFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Gradient.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
