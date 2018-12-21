@@ -36,7 +36,7 @@ namespace KPL_DrawingToolkit
                     if (button is ITool)
                     {
                         this.activeTool = (ITool)button;
-                        Debug.WriteLine(this.activeTool + "is selected");
+                        Debug.WriteLine(this.activeTool.Name + "is selected");
 
                         if (ToolSelected != null)
                         {
@@ -47,7 +47,7 @@ namespace KPL_DrawingToolkit
                     }
                     else
                     {
-                        throw new InvalidCastException("The tool is not an instance of Tool");
+                        throw new InvalidCastException("The tool is not an instance of ITool");
                     }
                 }
             }
@@ -59,7 +59,10 @@ namespace KPL_DrawingToolkit
             {
                 if (item != this.activeTool)
                 {
-                    ((ToolStripButton)item).Checked = false;
+                    if (item is ToolStripButton)
+                    {
+                        ((ToolStripButton)item).Checked = false;
+                    }
                 }
             }
         }
@@ -76,6 +79,11 @@ namespace KPL_DrawingToolkit
                     }
                 }
             }
+        }
+
+        public void AddSeparator()
+        {
+            this.Items.Add(new ToolStripSeparator());
         }
     }
 }

@@ -1,3 +1,4 @@
+using KPL_DrawingToolkit.Tools;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -32,6 +33,12 @@ namespace KPL_DrawingToolkit
             #region Tools
 
             Debug.WriteLine("Loading Tools . . .");
+            this.toolbox.AddTool(new ToolLine());
+            this.toolbox.AddSeparator();
+            this.toolbox.AddTool(new ToolRectangle());
+            this.toolbox.AddSeparator();
+            this.toolbox.AddTool(new ToolOval());
+            this.toolbox.ToolSelected += Toolbox_ToolSelected;
 
 
             #endregion

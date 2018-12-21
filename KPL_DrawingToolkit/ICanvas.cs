@@ -10,5 +10,7 @@ namespace KPL_DrawingToolkit
     {
         void SetActiveTool(ITool tool);
         void Repaint();
+
+        void AddDrawingObject(DrawingObject drawingObject);
     }
 }
