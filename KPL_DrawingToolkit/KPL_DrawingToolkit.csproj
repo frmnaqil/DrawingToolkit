@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DrawingCanvas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DrawingCanvas.Designer.cs">
+      <DependentUpon>DrawingCanvas.cs</DependentUpon>
+    </Compile>
     <Compile Include="DrawingFrame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Gradient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tools\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

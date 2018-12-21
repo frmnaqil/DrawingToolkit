@@ -25,18 +25,35 @@ namespace KPL_DrawingToolkit
 
             Debug.WriteLine("Loading Toolbox . . .");
             this.toolbox = new Toolbox();
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add((Control)this.toolbox);
 
+            #endregion
+
+            #region Tools
+
+            Debug.WriteLine("Loading Tools . . .");
 
 
             #endregion
 
+            #region Canvas
+
+            Debug.WriteLine("Loading Canvas . . .");
+            this.canvas = new DrawingCanvas();
+            this.toolStripContainer1.ContentPanel.Controls.Add((Control)this.canvas);
+
+            #endregion
 
 
         }
 
         private void Toolbox_ToolSelected(ITool tool)
         {
-
+            if (this.canvas != null)
+            {
+                this.canvas.SetActiveTool(tool);
+                tool.Canvas = this.canvas;
+            }
         }
     }
 }
