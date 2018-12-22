@@ -33,6 +33,8 @@ namespace KPL_DrawingToolkit
             #region Tools
 
             Debug.WriteLine("Loading Tools . . .");
+            this.toolbox.AddTool(new ToolSelection());
+            this.toolbox.AddSeparator();
             this.toolbox.AddTool(new ToolLine());
             this.toolbox.AddSeparator();
             this.toolbox.AddTool(new ToolRectangle());

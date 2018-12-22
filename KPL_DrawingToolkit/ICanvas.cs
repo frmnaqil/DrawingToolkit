@@ -12,5 +12,10 @@ namespace KPL_DrawingToolkit
         void Repaint();
 
         void AddDrawingObject(DrawingObject drawingObject);
+        void RemoveDrawingObject(DrawingObject drawing);
+
+        DrawingObject GetObjectAt(int x, int y);
+        DrawingObject SelectObjectAt(int x, int y);
+        void DeselectAllObjects();
     }
 }

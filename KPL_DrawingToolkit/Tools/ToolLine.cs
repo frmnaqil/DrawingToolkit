@@ -15,8 +15,8 @@ namespace KPL_DrawingToolkit.Tools
 
         public ToolLine()
         {
-            this.Name = "Line Tool";
-            this.ToolTipText = "Line Tool";
+            this.Name = "Stateful Line Tool";
+            this.ToolTipText = "Stateful Line Tool";
             this.Image = global::KPL_DrawingToolkit.Properties.Resources.Line;
             this.CheckOnClick = true;
         }
@@ -41,24 +41,36 @@ namespace KPL_DrawingToolkit.Tools
             if (e.Button == MouseButtons.Left)
             {
                 lineSegment = new ShapeLine(new System.Drawing.Point(e.X, e.Y));
+                lineSegment.EndPoint = new System.Drawing.Point(e.X, e.Y);
+                canvas.AddDrawingObject(lineSegment);
             }
         }
 
         public void ToolMouseMove(object sender, MouseEventArgs e)
         {
-
+            if (e.Button == MouseButtons.Left)
+            {
+                if (this.lineSegment != null)
+                {
+                    lineSegment.EndPoint = new System.Drawing.Point(e.X, e.Y);
+                }
+            }
         }
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (this.lineSegment != null)
             {
-                lineSegment.EndPoint = new System.Drawing.Point(e.X, e.Y);
-
-                if (lineSegment.StartPoint != lineSegment.EndPoint)
+                if (e.Button == MouseButtons.Left)
                 {
-                    canvas.AddDrawingObject(lineSegment);
+                    lineSegment.EndPoint = new System.Drawing.Point(e.X, e.Y);
+                    lineSegment.Select();
                 }
+                else if (e.Button == MouseButtons.Right)
+                {
+                    canvas.RemoveDrawingObject(this.lineSegment);
+                }
+                
             }
         }
     }

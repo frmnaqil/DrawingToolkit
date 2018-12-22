@@ -43,6 +43,7 @@ namespace KPL_DrawingToolkit.Tools
             if (e.Button == MouseButtons.Left)
             {
                 this.rectangle = new ShapeRectangle(e.X, e.Y);
+                this.canvas.AddDrawingObject(this.rectangle);
             }
         }
 
@@ -67,9 +68,16 @@ namespace KPL_DrawingToolkit.Tools
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (rectangle != null)
             {
-                this.canvas.AddDrawingObject(this.rectangle);
+                if (e.Button == MouseButtons.Left)
+                {
+                    this.rectangle.Select();
+                }
+                else if (e.Button == MouseButtons.Right)
+                {
+                    canvas.RemoveDrawingObject(this.rectangle);
+                }
             }
         }
     }
