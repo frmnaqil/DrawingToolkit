@@ -1,5 +1,6 @@
 ﻿using KPL_DrawingToolkit.Shapes;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace KPL_DrawingToolkit.Tools
@@ -41,6 +42,7 @@ namespace KPL_DrawingToolkit.Tools
             if (e.Button == MouseButtons.Left)
             {
                 this.oval = new ShapeOval(e.X, e.Y);
+                this.canvas.AddDrawingObject(this.oval);
             }
         }
 
@@ -50,7 +52,6 @@ namespace KPL_DrawingToolkit.Tools
             {
                 if (this.oval != null)
                 {
-
                     int width = e.X - oval.X;
                     int height = e.Y - oval.Y;
 
@@ -65,9 +66,16 @@ namespace KPL_DrawingToolkit.Tools
 
         public void ToolMouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (oval != null)
             {
-                this.canvas.AddDrawingObject(this.oval);
+                if (e.Button == MouseButtons.Left)
+                {
+                    this.oval.Select();
+                }
+                else if (e.Button == MouseButtons.Right)
+                {
+                    canvas.RemoveDrawingObject(this.oval);
+                }
             }
         }
     }

@@ -93,9 +93,9 @@ namespace KPL_DrawingToolkit
             this.drawingObjects.Add(drawingObject);
         }
 
-        public void RemoveDrawingObject(DrawingObject drawing)
+        public void RemoveDrawingObject(DrawingObject drawingObject)
         {
-            throw new NotImplementedException();
+            this.drawingObjects.Remove(drawingObject);
         }
 
         public DrawingObject GetObjectAt(int x, int y)
