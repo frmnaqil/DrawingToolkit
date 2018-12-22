@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Drawing.Drawing2D;
+using System.Diagnostics;
 using System.Drawing;
 
 namespace KPL_DrawingToolkit.Shapes
@@ -35,11 +36,6 @@ namespace KPL_DrawingToolkit.Shapes
             this.pen = pen;
         }
 
-        public override void Draw()
-        {
-            this.Graphics.DrawRectangle(pen, X, Y, Width, Height);
-        }
-
         public override bool Intersect(int xTest, int yTest)
         {
             if ((xTest >= X && xTest <= X + Width) && (yTest >= Y && yTest <= Y + Height))
@@ -58,17 +54,25 @@ namespace KPL_DrawingToolkit.Shapes
 
         public override void RenderOnPreview()
         {
-            throw new System.NotImplementedException();
+            this.pen.Color = Color.Red;
+            this.pen.Width = 2.0f;
+            this.pen.DashStyle = DashStyle.DashDotDot;
+            Graphics.DrawRectangle(this.pen, X, Y, Width, Height);
         }
 
         public override void RenderOnEditingView()
         {
-            throw new System.NotImplementedException();
+            this.pen.Color = Color.Blue;
+            this.pen.Width = 2.0f;
+            this.pen.DashStyle = DashStyle.Solid;
+            Graphics.DrawRectangle(this.pen, X, Y, Width, Height);
         }
 
         public override void RenderOnStaticView()
         {
-            throw new System.NotImplementedException();
+            this.pen.Color = Color.Black;
+            this.pen.DashStyle = DashStyle.Solid;
+            Graphics.DrawRectangle(this.pen, X, Y, Width, Height);
         }
     }
 }

@@ -52,6 +52,9 @@
     <Compile Include="DrawingCanvas.Designer.cs">
       <DependentUpon>DrawingCanvas.cs</DependentUpon>
     </Compile>
+    <Compile Include="DrawingEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DrawingFrame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +64,7 @@
     <Compile Include="DrawingObject.cs" />
     <Compile Include="DrawingState.cs" />
     <Compile Include="ICanvas.cs" />
+    <Compile Include="IEditor.cs" />
     <Compile Include="ITool.cs" />
     <Compile Include="IToolbox.cs" />
     <Compile Include="Program.cs" />

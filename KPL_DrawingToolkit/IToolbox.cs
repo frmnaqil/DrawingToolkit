@@ -8,12 +8,12 @@ namespace KPL_DrawingToolkit
 {
     public delegate void ToolSelectedEventHandler(ITool tool);
 
-    interface IToolbox
+    public interface IToolbox
     {
         event ToolSelectedEventHandler ToolSelected;
         void AddTool(ITool tool);
         void RemoveTool(ITool tool);
         void AddSeparator();
-        ITool ActiveTool { get; }
+        ITool ActiveTool { get; set; }
     }
 }

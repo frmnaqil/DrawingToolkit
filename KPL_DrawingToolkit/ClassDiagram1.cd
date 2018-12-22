@@ -3,7 +3,7 @@
   <Class Name="KPL_DrawingToolkit.DrawingCanvas" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAAAABCAABAIAFmChAAASAAAAAAAAAAACAUAAAAA=</HashCode>
+      <HashCode>BAAAAAAABCAABAIAFmChAAASAAAAAAAAABACAUAAAAA=</HashCode>
       <FileName>DrawingCanvas.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -78,17 +78,11 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KPL_DrawingToolkit.States.EditState" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAgAAAAAAAAAABABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>States\EditState.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KPL_DrawingToolkit.States.PreviewState" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAABABAAAAAAAAAQAAAAAA=</HashCode>
-      <FileName>States\PreviewState.cs</FileName>
+      <NewMemberFileName>States\PreviewState.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KPL_DrawingToolkit.States.StaticState" Collapsed="true">
@@ -133,7 +127,7 @@
   <Interface Name="KPL_DrawingToolkit.ICanvas" Collapsed="true">
     <Position X="7.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAIAFAAgAAAAAAAAAAAAAAAAAUAAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAAAAIAFAAgAAQAAAAAAAAAABAAAUAAAAA=</HashCode>
       <FileName>ICanvas.cs</FileName>
     </TypeIdentifier>
   </Interface>

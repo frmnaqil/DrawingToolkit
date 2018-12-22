@@ -10,7 +10,7 @@ namespace KPL_DrawingToolkit.States
     {
         private static DrawingState instance;
 
-        public static DrawingState GetInstances()
+        public static DrawingState GetInstance()
         {
             if (instance == null)
             {

@@ -8,7 +8,17 @@ namespace KPL_DrawingToolkit
     {
         private ITool activeTool;
 
-        public ITool ActiveTool => this.activeTool;
+        public ITool ActiveTool
+        {
+            get
+            {
+                return this.activeTool;
+            }
+            set
+            {
+                this.activeTool = value;
+            }
+        }
 
         public event ToolSelectedEventHandler ToolSelected;
 
@@ -36,7 +46,7 @@ namespace KPL_DrawingToolkit
                     if (button is ITool)
                     {
                         this.activeTool = (ITool)button;
-                        Debug.WriteLine(this.activeTool.Name + "is selected");
+                        Debug.WriteLine(this.activeTool.Name + " is selected");
 
                         if (ToolSelected != null)
                         {

@@ -30,19 +30,6 @@ namespace KPL_DrawingToolkit.Shapes
             this.EndPoint = endpoint;
         }
 
-        public override void RenderOnEditingView()
-        {
-            pen.Color = Color.Blue;
-            pen.Width = 1.5f;
-            pen.DashStyle = DashStyle.Solid;
-
-            if (this.Graphics != null)
-            {
-                this.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                this.Graphics.DrawLine(pen, this.StartPoint, this.EndPoint);
-            }
-        }
-
         public override void RenderOnStaticView()
         {
             pen.Color = Color.Black;
@@ -57,9 +44,30 @@ namespace KPL_DrawingToolkit.Shapes
             }
         }
 
-        public override void Draw()
+        public override void RenderOnEditingView()
         {
-            this.Graphics.DrawLine(this.pen, StartPoint, EndPoint);
+            pen.Color = Color.Blue;
+            pen.Width = 2.0f;
+            pen.DashStyle = DashStyle.Solid;
+
+            if (this.Graphics != null)
+            {
+                this.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                this.Graphics.DrawLine(pen, this.StartPoint, this.EndPoint);
+            }
+        }
+
+        public override void RenderOnPreview()
+        {
+            pen.Color = Color.Red;
+            pen.Width = 2.0f;
+            pen.DashStyle = DashStyle.DashDotDot;
+
+            if (this.Graphics != null)
+            {
+                this.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                this.Graphics.DrawLine(pen, this.StartPoint, this.EndPoint);
+            }
         }
 
         public override bool Intersect(int xTest, int yTest)
@@ -88,17 +96,5 @@ namespace KPL_DrawingToolkit.Shapes
             this.EndPoint = new Point(this.EndPoint.X + xAmount, this.EndPoint.Y + yAmount);
         }
 
-        public override void RenderOnPreview()
-        {
-            pen.Color = Color.Red;
-            pen.Width = 1.5f;
-            pen.DashStyle = DashStyle.DashDot;
-
-            if (this.Graphics != null)
-            {
-                this.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                this.Graphics.DrawLine(pen, this.StartPoint, this.EndPoint);
-            }
-        }
     }
 }

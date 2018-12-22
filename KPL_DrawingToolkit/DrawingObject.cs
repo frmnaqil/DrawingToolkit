@@ -17,7 +17,7 @@ namespace KPL_DrawingToolkit
         public DrawingObject()
         {
             IDObject = Guid.NewGuid();
-            this.ChangeState(EditState.GetInstance());
+            this.ChangeState(PreviewState.GetInstance());
         }
 
         public abstract bool Intersect(int xTest, int yTest);
@@ -45,7 +45,7 @@ namespace KPL_DrawingToolkit
 
         public void Deselect()
         {
-            Debug.WriteLine("Object ID : " + IDObject.ToString() + "is selected");
+            Debug.WriteLine("Object ID : " + IDObject.ToString() + "is deselected");
             this.state.Deselect(this);
         }
     }

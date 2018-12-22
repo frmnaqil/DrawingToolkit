@@ -41,22 +41,22 @@ namespace KPL_DrawingToolkit.Shapes
 
         public override void Translate(int x, int y, int xAmount, int yAmount)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public override void RenderOnPreview()
         {
-            throw new System.NotImplementedException();
+
         }
 
         public override void RenderOnEditingView()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public override void RenderOnStaticView()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

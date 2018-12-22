@@ -2,9 +2,15 @@
 {
     public abstract class DrawingState
     {
-        private DrawingState state;
+        public DrawingState State
+        {
+            get
+            {
+                return this.state;
+            }
+        }
 
-        public DrawingState State => this.state;
+        private DrawingState state;
 
         public abstract void Draw(DrawingObject obj);
 

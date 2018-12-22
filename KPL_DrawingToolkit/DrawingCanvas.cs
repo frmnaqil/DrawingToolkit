@@ -21,16 +21,17 @@ namespace KPL_DrawingToolkit
         {
             this.drawingObjects = new List<DrawingObject>();
             this.DoubleBuffered = true;
+
             this.BackColor = Color.White;
             this.Dock = DockStyle.Fill;
 
-            this.Paint += DefaultCanvas_Paint;
-            this.MouseDown += DefaultCanvas_MouseDown;
-            this.MouseUp += DefaultCanvas_MouseUp;
-            this.MouseMove += DefaultCanvas_MouseMove;
+            this.Paint += DrawingCanvas_Paint;
+            this.MouseDown += DrawingCanvas_MouseDown;
+            this.MouseUp += DrawingCanvas_MouseUp;
+            this.MouseMove += DrawingCanvas_MouseMove;
         }
 
-        private void DefaultCanvas_MouseMove(object sender, MouseEventArgs e)
+        private void DrawingCanvas_MouseMove(object sender, MouseEventArgs e)
         {
             if (this.activeTool != null)
             {
@@ -39,7 +40,7 @@ namespace KPL_DrawingToolkit
             }
         }
 
-        private void DefaultCanvas_MouseUp(object sender, MouseEventArgs e)
+        private void DrawingCanvas_MouseUp(object sender, MouseEventArgs e)
         {
             if (this.activeTool != null)
             {
@@ -48,7 +49,7 @@ namespace KPL_DrawingToolkit
             }
         }
 
-        private void DefaultCanvas_MouseDown(object sender, MouseEventArgs e)
+        private void DrawingCanvas_MouseDown(object sender, MouseEventArgs e)
         {
             if (this.activeTool != null)
             {
@@ -57,7 +58,7 @@ namespace KPL_DrawingToolkit
             }
         }
 
-        private void DefaultCanvas_Paint(object sender, PaintEventArgs e)
+        private void DrawingCanvas_Paint(object sender, PaintEventArgs e)
         {
             foreach (DrawingObject obj in drawingObjects)
             {
@@ -70,6 +71,11 @@ namespace KPL_DrawingToolkit
         {
             this.Invalidate();
             this.Update();
+        }
+
+        public ITool GetActiveTool()
+        {
+            return this.activeTool;
         }
 
         public void SetActiveTool(ITool tool)
@@ -121,5 +127,6 @@ namespace KPL_DrawingToolkit
                 drawObj.Deselect();
             }
         }
+
     }
 }
