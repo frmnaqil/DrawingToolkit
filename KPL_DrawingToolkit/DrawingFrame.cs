@@ -54,6 +54,8 @@ namespace KPL_DrawingToolkit
             this.toolbox.AddTool(new ToolRectangle());
             this.toolbox.AddSeparator();
             this.toolbox.AddTool(new ToolOval());
+            this.toolbox.AddSeparator();
+            this.toolbox.AddTool(new ToolGradient());
             this.toolbox.ToolSelected += Toolbox_ToolSelected;
 
             #endregion

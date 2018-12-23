@@ -33,7 +33,7 @@ namespace KPL_DrawingToolkit.Shapes
         public override void RenderOnStaticView()
         {
             pen.Color = Color.Black;
-            pen.Width = 1.5f;
+            pen.Width = 2.0f;
             pen.DashStyle = DashStyle.Solid;
 
             if (this.Graphics != null)
@@ -96,5 +96,9 @@ namespace KPL_DrawingToolkit.Shapes
             this.EndPoint = new Point(this.EndPoint.X + xAmount, this.EndPoint.Y + yAmount);
         }
 
+        public override void DrawGradient()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace KPL_DrawingToolkit.Shapes
         public int Height { get; set; }
 
         public Pen pen;
+        private bool isGradient;
 
         public ShapeRectangle()
         {
@@ -29,11 +30,6 @@ namespace KPL_DrawingToolkit.Shapes
         {
             this.Width = width;
             this.Height = height;
-        }
-
-        public ShapeRectangle(int x, int y, int width, int height, Pen pen) : this(x, y, width, height)
-        {
-            this.pen = pen;
         }
 
         public override bool Intersect(int xTest, int yTest)
@@ -62,17 +58,57 @@ namespace KPL_DrawingToolkit.Shapes
 
         public override void RenderOnEditingView()
         {
-            this.pen.Color = Color.Blue;
-            this.pen.Width = 2.0f;
-            this.pen.DashStyle = DashStyle.Solid;
-            Graphics.DrawRectangle(this.pen, X, Y, Width, Height);
+            if (isGradient)
+            {
+                LinearGradientBrush linGrBrush = new LinearGradientBrush(
+                new Point(this.X, this.Y),
+                new Point(Width + this.X, Height + this.Y),
+                Color.FromArgb(255, 255, 0, 0),   // Opaque red
+                Color.FromArgb(255, 0, 0, 255));
+
+                ColorBlend blend = new ColorBlend(2);
+                blend.Colors = new Color[2] { Color.Red, Color.Blue };
+                blend.Positions = new float[2] { 0f, 1f };
+
+                linGrBrush.InterpolationColors = blend;
+
+                Graphics.FillRectangle(linGrBrush, X, Y, Width, Height);
+            }
+            else
+            {
+                this.pen.Color = Color.Blue;
+                this.pen.Width = 2.0f;
+                this.pen.DashStyle = DashStyle.Solid;
+                Graphics.DrawRectangle(this.pen, X, Y, Width, Height);
+            }
         }
 
         public override void RenderOnStaticView()
         {
-            this.pen.Color = Color.Black;
-            this.pen.DashStyle = DashStyle.Solid;
-            Graphics.DrawRectangle(this.pen, X, Y, Width, Height);
+            if (isGradient)
+            {
+                LinearGradientBrush linGrBrush = new LinearGradientBrush(
+                new Point(this.X, this.Y),
+                new Point(Width + this.X, Height + this.Y),
+                Color.FromArgb(255, 255, 0, 0),   // Opaque red
+                Color.FromArgb(255, 0, 0, 255));
+
+                ColorBlend blend = new ColorBlend(2);
+                blend.Colors = new Color[2] { Color.Red, Color.Blue };
+                blend.Positions = new float[2] { 0f, 1f };
+
+                linGrBrush.InterpolationColors = blend;
+
+                Graphics.FillRectangle(linGrBrush, X, Y, Width, Height);
+            }
+            else
+            {
+                this.pen.Color = Color.Black;
+                this.pen.DashStyle = DashStyle.Solid;
+                Graphics.DrawRectangle(this.pen, X, Y, Width, Height);
+            }
         }
+
+        public override void DrawGradient() => this.isGradient = true;
     }
 }

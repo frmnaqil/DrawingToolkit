@@ -48,5 +48,7 @@ namespace KPL_DrawingToolkit
             Debug.WriteLine("Object ID : " + IDObject.ToString() + "is deselected");
             this.state.Deselect(this);
         }
+
+        public abstract void DrawGradient();
     }
 }
